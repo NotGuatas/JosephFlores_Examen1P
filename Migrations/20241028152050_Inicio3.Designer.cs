@@ -4,6 +4,7 @@ using JosephFlores_Examen1P.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JosephFlores_Examen1P.Migrations
 {
     [DbContext(typeof(JosephFlores_Examen1PContext))]
-    partial class JosephFlores_Examen1PContextModelSnapshot : ModelSnapshot
+    [Migration("20241028152050_Inicio3")]
+    partial class Inicio3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,7 +65,7 @@ namespace JosephFlores_Examen1P.Migrations
                         .IsRequired()
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProteinaID")
+                    b.Property<int?>("ProteinaId")
                         .HasColumnType("int");
 
                     b.Property<string>("descripcion")
@@ -71,7 +74,7 @@ namespace JosephFlores_Examen1P.Migrations
 
                     b.HasKey("PromoId");
 
-                    b.HasIndex("ProteinaID");
+                    b.HasIndex("ProteinaId");
 
                     b.ToTable("Promo");
                 });
@@ -80,9 +83,7 @@ namespace JosephFlores_Examen1P.Migrations
                 {
                     b.HasOne("JosephFlores_Examen1P.Models.JF_Proteina", "Proteina")
                         .WithMany("Proteins")
-                        .HasForeignKey("ProteinaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProteinaId");
 
                     b.Navigation("Proteina");
                 });

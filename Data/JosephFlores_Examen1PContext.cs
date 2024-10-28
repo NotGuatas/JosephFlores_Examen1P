@@ -15,5 +15,6 @@ namespace JosephFlores_Examen1P.Data
         }
 
         public DbSet<JosephFlores_Examen1P.Models.JF_Proteina> JF_Proteina { get; set; } = default!;
+        public DbSet<JosephFlores_Examen1P.Models.Promo> Promo { get; set; } = default!;
     }
 }

@@ -4,6 +4,7 @@ using JosephFlores_Examen1P.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JosephFlores_Examen1P.Migrations
 {
     [DbContext(typeof(JosephFlores_Examen1PContext))]
-    partial class JosephFlores_Examen1PContextModelSnapshot : ModelSnapshot
+    [Migration("20241028152735_Inicio5")]
+    partial class Inicio5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
