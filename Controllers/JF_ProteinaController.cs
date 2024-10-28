@@ -34,7 +34,7 @@ namespace JosephFlores_Examen1P.Controllers
             }
 
             var jF_Proteina = await _context.JF_Proteina
-                .FirstOrDefaultAsync(m => m.ProteinaId == id);
+                .FirstOrDefaultAsync(m => m.JFProteinaId == id);
             if (jF_Proteina == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace JosephFlores_Examen1P.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ProteinaId,Name,Date,Precio,WheyProtein")] JF_Proteina jF_Proteina)
         {
-            if (id != jF_Proteina.ProteinaId)
+            if (id != jF_Proteina.JFProteinaId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace JosephFlores_Examen1P.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!JF_ProteinaExists(jF_Proteina.ProteinaId))
+                    if (!JF_ProteinaExists(jF_Proteina.JFProteinaId))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace JosephFlores_Examen1P.Controllers
             }
 
             var jF_Proteina = await _context.JF_Proteina
-                .FirstOrDefaultAsync(m => m.ProteinaId == id);
+                .FirstOrDefaultAsync(m => m.JFProteinaId == id);
             if (jF_Proteina == null)
             {
                 return NotFound();
@@ -151,7 +151,7 @@ namespace JosephFlores_Examen1P.Controllers
 
         private bool JF_ProteinaExists(int id)
         {
-            return _context.JF_Proteina.Any(e => e.ProteinaId == id);
+            return _context.JF_Proteina.Any(e => e.JFProteinaId == id);
         }
     }
 }
