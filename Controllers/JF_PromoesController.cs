@@ -44,7 +44,7 @@ namespace JosephFlores_Examen1P.Controllers
         }
 
         // GET: JF_Promoes/Create
-        public IActionResult Create()
+        public IActionResult JFCreate()
         {
             return View();
         }
@@ -54,7 +54,7 @@ namespace JosephFlores_Examen1P.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PromoId,descripcion,Date")] Promo promo)
+        public async Task<IActionResult> JFCreate([Bind("PromoId,descripcion,Date")] Promo promo)
         {
             if (ModelState.IsValid)
             {
